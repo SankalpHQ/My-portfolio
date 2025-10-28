@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankalp Singh - MERN Developer & UI/UX Designer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#38bdf8', // A bright blue for accents (Tailwind's sky-400)
+                        'brand-dark': '#0f172a', // A very dark blue (Tailwind's slate-900)
+                        'brand-light-dark': '#1e293b', // A lighter dark (Tailwind's slate-800)
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles for Typewriter -->
+    <style>
+        body {
+            background-color: #0f172a; /* brand-dark */
+            color: #e2e8f0; /* slate-200 */
+        }
+
+        /* Typewriter cursor */
+        .typewriter-text {
+            border-right: 2px solid #38bdf8; /* brand-blue */
+            animation: caret 1s steps(1) infinite;
+        }
+
+        @keyframes caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Scrollbar styles (optional but nice) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* brand-light-dark */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; /* brand-blue */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; /* sky-500 */
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header / Navigation -->
+    <header class="bg-brand-dark/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-700">
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-2xl font-bold text-white hover:text-brand-blue transition-colors">
+                Sankalp Singh
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-slate-300 hover:text-brand-blue transition-colors">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-brand-blue transition-colors">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-brand-blue transition-colors">Skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-brand-blue transition-colors">Projects</a>
+                <a href="#contact" class="text-slate-300 hover:text-brand-blue transition-colors">Contact</a>
+                <a href="#" class="bg-brand-blue text-brand-dark font-medium px-5 py-2 rounded-lg hover:bg-sky-500 transition-all">
+                    View Resume
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-brand-dark z-40 flex flex-col items-center justify-center space-y-8">
+            <a href="#home" class="mobile-menu-link text-3xl font-bold text-slate-300 hover:text-brand-blue transition-colors">Home</a>
+            <a href="#about" class="mobile-menu-link text-3xl font-bold text-slate-300 hover:text-brand-blue transition-colors">About</a>
+            <a href="#skills" class="mobile-menu-link text-3xl font-bold text-slate-300 hover:text-brand-blue transition-colors">Skills</a>
+            <a href="#projects" class="mobile-menu-link text-3xl font-bold text-slate-300 hover:text-brand-blue transition-colors">Projects</a>
+            <a href="#contact" class="mobile-menu-link text-3xl font-bold text-slate-300 hover:text-brand-blue transition-colors">Contact</a>
+            <a href="#" class="mobile-menu-link mt-4 bg-brand-blue text-brand-dark font-medium px-6 py-3 rounded-lg hover:bg-sky-500 transition-all">
+                View Resume
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- 1. Hero Section -->
+        <section id="home" class="min-h-screen flex items-center pt-20 pb-10">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="flex flex-col gap-y-6 text-center items-center">
+                    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                        Sankalp Singh
+                    </h1>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue">
+                        <span id="typewriter" class="typewriter-text"></span>
+                    </h2>
+                    <p class="text-lg text-slate-300 max-w-lg mx-auto">
+                        I build user-centric, full-stack web applications with a strong focus on seamless functionality and engaging design. Currently pursuing my BCA, I turn complex challenges into elegant, scalable solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-4 justify-center">
+                        <a href="#projects" class="bg-brand-blue text-brand-dark font-bold px-7 py-3 rounded-lg hover:bg-sky-500 transition-all text-lg">
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="bg-brand-light-dark text-white font-bold px-7 py-3 rounded-lg hover:bg-slate-700 transition-all text-lg">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex gap-6 mt-6 justify-center">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/SankalpHQ" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-blue transition-colors" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <!-- LinkedIn Icon -->
+                        <a href="https://www.linkedin.com/in/sankalp-singh001/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-blue transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Image (REMOVED) -->
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-24 bg-brand-light-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Centered Layout -->
+                <div class="flex flex-col items-center gap-y-10">
+                    <!-- Image (REMOVED) -->
+                    
+                    <!-- Content -->
+                    <div class="flex flex-col gap-y-4 max-w-3xl">
+                        <h2 class="text-4xl font-black text-white text-center">About Me</h2>
+                        <div class="w-24 h-1.5 bg-brand-blue rounded-full mx-auto"></div>
+                        <p class="text-lg text-slate-300">
+                            Hello! I'm Sankalp, a passionate developer and designer driven by a vision to innovate and make meaningful contributions to the tech industry.
+                        </p>
+                        <p class="text-slate-300">
+                            As a MERN Stack Developer and UI/UX designer, I thrive in the space where logic meets creativity. I build full-stack applications using <strong class="text-brand-blue">MongoDB, Express.js, React.js, and Node.js</strong>, with expertise in designing RESTful APIs, managing databases, and creating responsive, accessible user interfaces. My design process is rooted in <strong class="text-brand-blue">wireframing, prototyping, and usability testing</strong>.
+                        </p>
+                        <p class="text-slate-300">
+                            Currently pursuing a <strong class="text-white">BCA from Galgotias University</strong>, my foundation is reinforced by an Advanced Diploma in Computer Software (DSDC), a NIELIT O-Level certification, and Skill India Mission training. I have a strong command of <strong class="text-white">Data Structures & Algorithms (DSA)</strong> using <strong class="text-white">C++</strong>. I am also proficient in <strong class="text-white">JavaScript</strong> and <strong class="text-white">Python</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-24 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-white text-center">My Technical Toolkit</h2>
+                <div class="w-24 h-1.5 bg-brand-blue rounded-full mx-auto mt-4"></div>
+                <p class="text-lg text-slate-300 text-center max-w-2xl mx-auto mt-6">
+                    A collection of the technologies and concepts I use to bring ideas to life.
+                </p>
+
+                <!-- New Skill Grid based on screenshot -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                    
+                    <!-- Card 1: MERN Stack Development -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">MERN Stack Development</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">MongoDB</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Express.js</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">React.js</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Node.js</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: UI/UX Design -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">UI/UX Design</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Wireframing & Prototyping</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Usability Testing</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Responsive Design</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">User-Centric Approach</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3: Front-End -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Front-End</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">HTML5</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">CSS3 / Tailwind CSS</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2Two-Factor Authentication/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">JavaScript (ES6+)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">API Integration</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4: Back-End & API -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Back-End & API</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">RESTful APIs</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">GraphQL</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Authentication (JWT, OAuth)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Database Management</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5: Core Concepts & Languages -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Core Concepts & Languages</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Data Structures & Algorithms (C++)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Python</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Object-Oriented Programming</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Scalable Code Architecture</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6: Tools & Deployment -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Tools & Deployment</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">Git & GitHub</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2This is an invalid module. Please select a valid module./svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">CI/CD</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span class="text-slate-300">AWS, Netlify, Vercel</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-24 bg-brand-light-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-white text-center">My Projects</h2>
+                <div class="w-24 h-1.5 bg-brand-blue rounded-full mx-auto mt-4"></div>
+                <p class="text-lg text-slate-300 text-center max-w-2xl mx-auto mt-6">
+                    A selection of my work where I've applied my skills in development and design.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+                    <!-- Project Card 1: Navify -->
+                    <div class="bg-brand-dark rounded-xl shadow-lg border border-slate-700 overflow-hidden flex flex-col">
+                        <div class="h-56 bg-brand-light-dark flex items-center justify-center">
+                            <h3 class="text-4xl font-extrabold text-brand-blue tracking-wider">Navify</h3>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-2xl font-bold text-white">Navify - Transport Tracker</h4>
+                            <p class="text-slate-300 mt-3 flex-grow">A full-stack web application designed to track transport services, providing real-time updates and efficient route management for users.</p>
+                            <div class="flex flex-wrap gap-4 mt-6">
+                                <a href="https://sankalphq.github.io/Transport-tracker/" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-brand-dark font-medium px-5 py-2 rounded-lg hover:bg-sky-500 transition-all text-center">
+                                    Live Website
+                                </a>
+                                <a href="https://sankalphq.github.io/Prototype-Navify/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 text-slate-200 font-medium px-5 py-2 rounded-lg hover:bg-slate-600 transition-all text-center">
+                                    View Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: FauxCheck -->
+                    <div class="bg-brand-dark rounded-xl shadow-lg border border-slate-700 overflow-hidden flex flex-col">
+                        <div class="h-56 bg-brand-light-dark flex items-center justify-center">
+                            <h3 class="text-4xl font-extrabold text-brand-blue tracking-wider">FauxCheck</h3>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-2xl font-bold text-white">FauxCheck - Verification Platform</h4>
+                            <p class="text-slate-300 mt-3 flex-grow">A web tool focused on information authenticity. This project demonstrates front-end skills and a clean UI for a critical verification service.</p>
+                            <div class="flex flex-wrap gap-4 mt-6">
+                                <a href="https://sankalphq.github.io/FauxCheck/" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-brand-dark font-medium px-5 py-2 rounded-lg hover:bg-sky-500 transition-all text-center">
+                                    Live Website
+                                </a>
+                                <a href="https://sankalphq.github.io/Prototype-FauxCheck/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 text-slate-200 font-medium px-5 py-2 rounded-lg hover:bg-slate-600 transition-all text-center">
+                                    View Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: PeerSkill -->
+                    <div class="bg-brand-dark rounded-xl shadow-lg border border-slate-700 overflow-hidden flex flex-col">
+                        <div class="h-56 bg-brand-light-dark flex items-center justify-center">
+                            <h3 class="text-4xl font-extrabold text-brand-blue tracking-wider">PeerSkill</h3>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-2xl font-bold text-white">PeerSkill - P2P Learning Hub</h4>
+                            <p class="text-slate-300 mt-3 flex-grow">A conceptual platform designed to connect peers for collaborative skill-sharing and learning in a community-driven environment.</p>
+                            <div class="flex flex-wrap gap-4 mt-6">
+                                <a href="https://sankalphq.github.io/PeerSkill/" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-brand-dark font-medium px-5 py-2 rounded-lg hover:bg-sky-500 transition-all text-center">
+                                    Live Website
+                                </a>
+                                <a href="https://sankalphq.github.io/Prototype-PeerSkill/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 text-slate-200 font-medium px-5 py-2 rounded-lg hover:bg-slate-600 transition-all text-center">
+                                    View Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: SmartEats -->
+                    <div class="bg-brand-dark rounded-xl shadow-lg border border-slate-700 overflow-hidden flex flex-col">
+                        <div class="h-56 bg-brand-light-dark flex items-center justify-center">
+                            <h3 class="text-4xl font-extrabold text-brand-blue tracking-wider">SmartEats</h3>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h4 class="text-2xl font-bold text-white">SmartEats - Cafeteria Ordering</h4>
+                            <p class="text-slate-300 mt-3 flex-grow">An app to place orders in a college cafeteria digitally while in class, avoiding last-moment rushes and saving time.</p>
+                            <div class="flex flex-wrap gap-4 mt-6">
+                                <a href="https://sankalphq.github.io/SmartEats/" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-brand-dark font-medium px-5 py-2 rounded-lg hover:bg-sky-500 transition-all text-center">
+                                    Live Website
+                                </a>
+                                <a href="https://sankalphq.github.io/SmartEats-Prototype/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 text-slate-200 font-medium px-5 py-2 rounded-lg hover:bg-slate-600 transition-all text-center">
+                                    View Prototype
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Credentials Section -->
+        <section id="credentials" class="py-24 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-white text-center">My Credentials</h2>
+                <div class="w-24 h-1.5 bg-brand-blue rounded-full mx-auto mt-4"></div>
+                <p class="text-lg text-slate-300 text-center max-w-2xl mx-auto mt-6">
+                    My formal education and certifications that shape my expertise.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                    
+                    <!-- Credential Card 1 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">2024 - Pursuing</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Bachelor of Computer Applications</h3>
+                        <p class="text-slate-300">Galgotias University</p>
+                    </div>
+
+                    <!-- Credential Card 2 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">Certification</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Advanced Diploma in Computer Software</h3>
+                        <p class="text-slate-300">DSDC</p>
+                    </div>
+
+                    <!-- Credential Card 3 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">Certification</span>
+                        <h3 class="text-xl font-bold text-white mt-1">O-Level Certification</h3>
+                        <p class="text-slate-300">NIELIT</p>
+                    </div>
+
+                    <!-- Credential Card 4 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">Certification</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Skill India Mission Training</h3>
+                        <p class="text-slate-300">NSDC-Affiliated Program</p>
+                    </div>
+
+                    <!-- Credential Card 5 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">2023</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Class XII (CBSE)</h3>
+                        <p class="text-slate-300">ST COLUMBUS SCHOOL</p>
+                    </div>
+
+                    <!-- Credential Card 6 -->
+                    <div class="bg-brand-light-dark p-6 rounded-xl shadow-lg border border-slate-700">
+                        <span class="text-brand-blue font-semibold text-lg">2021</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Class X (CBSE)</h3>
+                        <p class="text-slate-300">ST COLUMBUS SCHOOL</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section (NEW) -->
+        <section id="contact" class="py-24 bg-brand-light-dark">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-black text-white text-center">Get In Touch</h2>
+                <div class="w-24 h-1.5 bg-brand-blue rounded-full mx-auto mt-4"></div>
+                <p class="text-lg text-slate-300 text-center max-w-2xl mx-auto mt-6">
+                    I'm currently available for new opportunities and freelance projects. Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+
+                <div class="mt-16 max-w-lg mx-auto flex flex-col gap-8">
+                    <!-- Email -->
+                    <div class="flex items-center gap-5 bg-brand-dark p-5 rounded-xl border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Email</h3>
+                            <a href="mailto:sankalp9971@gmail.com" class="text-slate-300 hover:text-brand-blue transition-colors">sankalp9971@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-center gap-5 bg-brand-dark p-5 rounded-xl border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Phone</h3>
+                            <a href="tel:+919389711785" class="text-slate-300 hover:text-brand-blue transition-colors">+91 9389711785</a>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-5 bg-brand-dark p-5 rounded-xl border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Location</h3>
+                            <p class="text-slate-300">Faridabad, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-brand-dark border-t border-slate-700">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
+            <div class="flex gap-6">
+                <!-- GitHub Icon -->
+                <a href="https://github.com/SankalpHQ" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-blue transition-colors" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/sankalp-singh001/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brand-blue transition-colors" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+            <p class="text-slate-400 text-center">
+                Designed & Built by Sankalp Singh | &copy; 2025
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            
+            let isMenuOpen = false;
+
+            const toggleMenu = () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                
+                // Toggle body scroll
+                if (isMenuOpen) {
+                    document.body.style.overflow = 'hidden';
+                    // Change icon to 'X'
+                    menuBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>`;
+                } else {
+                    document.body.style.overflow = 'auto';
+                    // Change icon to 'Menu'
+                    menuBtn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>`;
+                }
+            };
+
+            menuBtn.addEventListener('click', toggleMenu);
+            // Close menu when a link is clicked
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // --- Smooth Scrolling for all anchor links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Don't prevent default for links that are just "#"
+                    if (this.getAttribute('href') === '#') return;
+
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        // Calculate offset for sticky header
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+
+            // --- Typewriter Effect ---
+            const typewriterElement = document.getElementById('typewriter');
+            const words = ["MERN Stack Developer", "UI/UX Designer", "Creative Problem-Solver"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typeSpeed = 100;
+            const deleteSpeed = 50;
+            const delay = 2000;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                if (isDeleting) {
+                    // Deleting
+                    typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    // Typing
+                    typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                // Check if word is fully typed or deleted
+                if (!isDeleting && charIndex === currentWord.length) {
+                    // Pause at end of word
+                    setTimeout(() => isDeleting = true, delay);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+
+                // Set typing speed
+                const speed = isDeleting ? deleteSpeed : typeSpeed;
+                setTimeout(type, speed);
+            }
+
+            // Start the typewriter effect
+            type();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
